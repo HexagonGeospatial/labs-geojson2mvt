@@ -21,7 +21,8 @@ var geojson2mvt = function(options) {
         tileIndex[i] = geojsonvt(options.layers[layerNames[i]], {
             maxZoom: options.zoom.max,
             indexMaxZoom: options.zoom.max,
-            indexMaxPoints: 0
+            indexMaxPoints: 0,
+            ...(options.geoJsonVt || {})
         });
     }
 
